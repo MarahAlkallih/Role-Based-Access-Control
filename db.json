@@ -1,0 +1,58 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "name": "admin",
+            "password": "123456789",
+            "role": "admin",
+            "permissions": [
+                "view_dashboard",
+                "view_products",
+                "view_product",
+                "edit_products",
+                "delete_products"
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Marah",
+            "password": "12345678",
+            "role": "user",
+            "permissions": [
+                
+                "view_products",
+                "view_product"
+               
+            ]
+        },
+        {
+            "id": "3",
+            "name": "Marah2",
+            "password": "12345678",
+            "role": "user",
+            "permissions": [
+                
+                "view_products",
+                "view_product"
+               
+            ]
+        }
+    ],
+    "products":[
+        {
+            "id":"1",
+            "name":"iphone17",
+            "price":"3300$"
+        },
+         {
+            "id":"2",
+            "name":"iphone17",
+            "price":"3300$"
+        },
+         {
+            "id":"3",
+            "name":"iphone17",
+            "price":"3300$"
+        }
+    ]
+}
