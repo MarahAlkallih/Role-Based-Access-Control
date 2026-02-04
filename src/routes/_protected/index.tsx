@@ -1,14 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Navigate } from "@tanstack/react-router";
+import ProtectedRoutes from "../../components/ProtectedRoutes";
 
 export const Route=createFileRoute("/_protected/")(
     {
-        component:RouteComponent,
-    }
+         component:()=>{
+            <ProtectedRoutes allowGuest>
+                <Navigate to="/dashboard"/>
+            </ProtectedRoutes>
+        
+    }}
 )
-function RouteComponent(){
-    return (
-        <div>
-            hello "_protected!"
-        </div>
-    )
-}
