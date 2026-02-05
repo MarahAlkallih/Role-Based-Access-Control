@@ -1,7 +1,7 @@
 import {  createContext, useContext, useState, type ReactNode } from "react";
 export interface User{
     id:string;
-    userName:string;
+    name:string;
     password:string;
     role:string;
     permissions:string[];
@@ -15,12 +15,20 @@ interface AuthContextType{
 }
 const AuthContext=createContext<AuthContextType|null>(null);
 export const AuthProvider=({children}:{children:ReactNode})=>{
-    const [user,setUser]=useState<User|null>(null);
+    const [user,setUser]=useState<User|null>(
+        ()=>{
+  const  storedUser=localStorage.getItem("user");
+    return storedUser ? JSON.parse(storedUser) :null;
+}
+    
+    );
     const authLogin=(uerData:User)=>{
         setUser(uerData);
+        localStorage.setItem("user",JSON.stringify(uerData))
     };
     const logout=()=>{
         setUser(null);
+        localStorage.removeItem("user");
     };
     const hasPermission=(permission:string)=>{
         return user?.permissions?.includes(permission)||false;

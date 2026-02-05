@@ -4,11 +4,11 @@ import { PERMESSIONS } from "../../utils/roles";
 
 export const Route=createFileRoute("/_protected/products")(
     {
-        component:()=>{
+        component:()=>(
             <ProtectedRoutes permisions={[PERMESSIONS.VIEW_PRODUCTS]}>
                 <RouteComponent/>
             </ProtectedRoutes>
-        }
+)
     }
 )
 function RouteComponent(){

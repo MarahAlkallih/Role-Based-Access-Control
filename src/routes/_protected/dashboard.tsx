@@ -19,7 +19,7 @@ function RouteComponent(){
          <div className="p-10">
             {user?(<>
              <h2 className="text-4xl font-bold mb-2">
-             Welcome {user?.userName}
+             Welcome ,{user?.name}
             </h2>
             <p className="text-gray-800">
                Role:{user?.role}
